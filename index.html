@@ -1,0 +1,1242 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>INNHSafe | School Safety and Awareness</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --navy: #102B49;
+  --blue: #2563A6;
+  --light-blue: #60A5FA;
+  --pale: #EFF6FF;
+  --white: #FFFFFF;
+  --text: #26364A;
+  --muted: #64748B;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  background: #F8FAFC;
+  line-height: 1.7;
+}
+
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* NAVIGATION */
+
+header {
+  background: var(--navy);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+}
+
+.navbar {
+  max-width: 1200px;
+  margin: auto;
+  padding: 16px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 23px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: var(--light-blue);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-links a {
+  font-size: 13px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--light-blue);
+}
+
+.menu-btn {
+  display: none;
+  border: none;
+  color: white;
+  background: transparent;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+  background: linear-gradient(120deg, #102B49, #2563A6);
+  color: white;
+  padding: 110px 8%;
+  min-height: 490px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 850px;
+}
+
+.hero-label {
+  color: #BFDBFE;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 7vw, 76px);
+  line-height: 1.1;
+  margin-bottom: 22px;
+  font-weight: 800;
+}
+
+.hero h1 span {
+  color: #93C5FD;
+}
+
+.hero p {
+  max-width: 620px;
+  color: #E2E8F0;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 13px 25px;
+  background: white;
+  color: var(--navy);
+  border-radius: 6px;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.hero-btn:hover {
+  background: #BFDBFE;
+  transform: translateY(-3px);
+}
+
+/* GENERAL SECTIONS */
+
+section.content-section {
+  padding: 85px 8%;
+  scroll-margin-top: 75px;
+}
+
+.container {
+  max-width: 1150px;
+  margin: auto;
+}
+
+.section-label {
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: clamp(27px, 4vw, 40px);
+  color: var(--navy);
+  margin-bottom: 15px;
+  line-height: 1.25;
+}
+
+.section-description {
+  color: var(--muted);
+  max-width: 700px;
+  margin-bottom: 35px;
+}
+
+/* ABOUT */
+
+.about {
+  background: white;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 45px;
+  align-items: center;
+}
+
+.about-box {
+  background: var(--pale);
+  padding: 30px;
+  border-left: 5px solid var(--blue);
+  border-radius: 8px;
+}
+
+.about-box h3 {
+  color: var(--navy);
+  margin-bottom: 12px;
+}
+
+/* SAFETY CARDS */
+
+.safety-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.safety-card {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  border: 1px solid #E2E8F0;
+  transition: 0.3s;
+}
+
+.safety-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(37,99,166,0.10);
+}
+
+.card-icon {
+  font-size: 35px;
+  margin-bottom: 15px;
+}
+
+.safety-card h3 {
+  color: var(--navy);
+  margin-bottom: 12px;
+  font-size: 20px;
+}
+
+.safety-card p {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+
+.card-link {
+  color: var(--blue);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+/* DETAILED GUIDES */
+
+.guide-section {
+  background: white;
+}
+
+.guide-section:nth-of-type(even) {
+  background: #F1F5F9;
+}
+
+.guide-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.guide-box {
+  background: white;
+  padding: 25px;
+  border-radius: 9px;
+  border: 1px solid #E2E8F0;
+}
+
+.guide-box h3 {
+  color: var(--blue);
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.guide-box ul {
+  padding-left: 20px;
+}
+
+.guide-box li {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: var(--text);
+}
+
+/* NOTICE */
+
+.notice {
+  background: #DBEAFE;
+  border-left: 5px solid var(--blue);
+  padding: 20px;
+  margin-top: 25px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* SAFETY GALLERY */
+
+.gallery-section {
+  background: #EFF6FF;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.gallery-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #E2E8F0;
+  transition: 0.3s;
+}
+
+.gallery-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(37,99,166,0.12);
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-info {
+  padding: 20px;
+}
+
+.gallery-info h3 {
+  color: var(--navy);
+  margin-bottom: 8px;
+  font-size: 17px;
+}
+
+.gallery-info p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.gallery-source {
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* EMERGENCY HOTLINES */
+
+.emergency {
+  background: var(--navy);
+  color: white;
+  text-align: center;
+}
+
+.emergency .section-title {
+  color: white;
+}
+
+.emergency .section-description {
+  color: #CBD5E1;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.emergency-box {
+  background: rgba(255,255,255,0.09);
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 750px;
+  margin: auto;
+}
+
+.emergency-number {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 45px;
+  font-weight: 800;
+  color: #93C5FD;
+  margin: 10px 0;
+}
+
+.hotline-list {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.hotline-item {
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.hotline-item:last-child {
+  border-bottom: none;
+}
+
+.hotline-item strong {
+  color: #BFDBFE;
+  display: block;
+  font-size: 14px;
+}
+
+.hotline-item a {
+  color: white;
+  font-size: 14px;
+  display: inline-block;
+}
+
+.hotline-item a:hover {
+  color: #93C5FD;
+  text-decoration: underline;
+}
+
+.emergency hr {
+  border: 0;
+  border-top: 1px solid #475569;
+  margin: 25px 0;
+}
+
+/* EVACUATION INFORMATION */
+
+.evacuation-box {
+  margin-top: 25px;
+  padding: 25px;
+  background: rgba(147,197,253,0.12);
+  border: 1px solid rgba(147,197,253,0.35);
+  border-radius: 10px;
+  text-align: left;
+}
+
+.evacuation-box h3 {
+  color: #93C5FD;
+  margin-bottom: 15px;
+}
+
+.evacuation-box p {
+  margin-bottom: 12px;
+}
+
+/* FOOTER */
+
+footer {
+  background: #0B1E33;
+  color: #CBD5E1;
+  padding: 35px 8%;
+  text-align: center;
+}
+
+footer h3 {
+  color: white;
+  margin-bottom: 10px;
+}
+
+footer p {
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media(max-width: 800px) {
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 62px;
+    left: 0;
+    width: 100%;
+    background: var(--navy);
+    padding: 25px;
+    gap: 20px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .about-grid,
+  .safety-grid,
+  .guide-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero {
+    padding: 85px 7%;
+  }
+
+  section.content-section {
+    padding: 65px 7%;
+  }
+}
+
+@media(max-width: 500px) {
+  .logo {
+    font-size: 19px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .emergency-number {
+    font-size: 35px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<header>
+  <nav class="navbar">
+    <a href="#home" class="logo">INNHS<span>afe.</span></a>
+
+    <button class="menu-btn"
+      onclick="toggleMenu()"
+      aria-label="Toggle navigation">☰</button>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#home" onclick="closeMenu()">HOME</a>
+      <a href="#about" onclick="closeMenu()">ABOUT</a>
+      <a href="#safety" onclick="closeMenu()">SAFETY GUIDES</a>
+      <a href="#gallery" onclick="closeMenu()">GALLERY</a>
+      <a href="#helpline" onclick="closeMenu()">HELPLINE</a>
+    </div>
+  </nav>
+</header>
+
+<!-- HOMEPAGE -->
+
+<section class="hero" id="home">
+  <div class="hero-content">
+
+    <div class="hero-label">
+      SCHOOL SAFETY AND AWARENESS
+    </div>
+
+    <h1>
+      SAFETY STARTS<br>
+      <span>WITH YOU.</span>
+    </h1>
+
+    <p>
+      Welcome to INNHSafe, your school safety information hub.
+      Learn how to stay informed, prepared, and protected during
+      emergencies. Because a safer school begins with awareness.
+    </p>
+
+    <a href="#safety" class="hero-btn">
+      EXPLORE SAFETY GUIDES →
+    </a>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+
+<section class="content-section about" id="about">
+  <div class="container">
+
+    <div class="about-grid">
+
+      <div>
+        <div class="section-label">WHO WE ARE</div>
+
+        <h2 class="section-title">
+          Creating a Safer School Environment
+        </h2>
+
+        <p class="section-description">
+          INNHSafe is an educational school safety website
+          designed to provide students with essential information
+          about different emergencies that may occur within
+          the school environment.
+        </p>
+
+        <p class="section-description">
+          Through accessible safety guides and emergency
+          preparedness information, we aim to encourage
+          awareness, responsibility, and readiness among students.
+        </p>
+      </div>
+
+      <div class="about-box">
+        <h3>Our Purpose</h3>
+        <p>
+          To help students understand what to do before,
+          during, and after emergencies through clear,
+          reliable, and easy-to-understand safety information.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SAFETY GUIDES OVERVIEW -->
+
+<section class="content-section" id="safety">
+  <div class="container">
+
+    <div class="section-label">BE INFORMED. BE PREPARED.</div>
+
+    <h2 class="section-title">
+      Explore Our Safety Guides
+    </h2>
+
+    <p class="section-description">
+      Emergencies can happen unexpectedly. Knowing the
+      appropriate safety measures can help you make
+      informed decisions and protect yourself and others.
+    </p>
+
+    <div class="safety-grid">
+
+      <div class="safety-card">
+        <div class="card-icon">🌎</div>
+        <h3>Earthquake Safety</h3>
+        <p>
+          Learn the proper safety procedures before,
+          during, and after an earthquake.
+        </p>
+        <a href="#earthquake" class="card-link">READ SAFETY GUIDE →</a>
+      </div>
+
+      <div class="safety-card">
+        <div class="card-icon">🔥</div>
+        <h3>Fire Safety</h3>
+        <p>
+          Understand fire prevention, evacuation procedures,
+          and ways to stay safe during a fire.
+        </p>
+        <a href="#fire" class="card-link">READ SAFETY GUIDE →</a>
+      </div>
+
+      <div class="safety-card">
+        <div class="card-icon">⚠️</div>
+        <h3>Bomb Threat Safety</h3>
+        <p>
+          Know how to respond appropriately to a bomb threat
+          and follow official emergency instructions.
+        </p>
+        <a href="#bomb" class="card-link">READ SAFETY GUIDE →</a>
+      </div>
+
+      <div class="safety-card">
+        <div class="card-icon">🛡️</div>
+        <h3>School Shooting Safety</h3>
+        <p>
+          Learn general protective actions and how to
+          respond to official school emergency procedures.
+        </p>
+        <a href="#shooting" class="card-link">READ SAFETY GUIDE →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EARTHQUAKE GUIDE -->
+
+<section class="content-section guide-section" id="earthquake">
+  <div class="container">
+
+    <div class="section-label">SAFETY GUIDE 01</div>
+    <h2 class="section-title">🌎 Earthquake Safety</h2>
+
+    <p class="section-description">
+      An earthquake is the sudden shaking of the ground
+      caused by movements within the Earth's crust.
+      It can happen without warning, making preparedness important.
+    </p>
+
+    <div class="guide-grid">
+
+      <div class="guide-box">
+        <h3>BEFORE AN EARTHQUAKE</h3>
+        <ul>
+          <li>Know the designated evacuation areas and emergency exits.</li>
+          <li>Participate seriously in earthquake drills.</li>
+          <li>Identify safe spots such as sturdy tables or desks.</li>
+          <li>Keep emergency supplies accessible.</li>
+          <li>Secure heavy furniture and objects.</li>
+        </ul>
+      </div>
+
+      <div class="guide-box">
+        <h3>DURING AN EARTHQUAKE</h3>
+        <ul>
+          <li>Stay calm and avoid panicking.</li>
+          <li>Practice Drop, Cover, and Hold On.</li>
+          <li>Protect your head and neck.</li>
+          <li>Stay away from windows and falling objects.</li>
+          <li>Do not rush toward exits while the ground is shaking.</li>
+        </ul>
+      </div>
+
+      <div class="guide-box">
+        <h3>AFTER AN EARTHQUAKE</h3>
+        <ul>
+          <li>Wait until the shaking stops before evacuating.</li>
+          <li>Follow teachers and school authorities.</li>
+          <li>Use designated evacuation routes and stairs.</li>
+          <li>Stay away from damaged buildings and structures.</li>
+          <li>Be prepared for possible aftershocks.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="notice">
+      <strong>REMEMBER:</strong> Drop, Cover, and Hold On.
+      Follow your school's earthquake emergency plan.
+    </div>
+
+  </div>
+</section>
+
+<!-- FIRE GUIDE -->
+
+<section class="content-section guide-section" id="fire">
+  <div class="container">
+
+    <div class="section-label">SAFETY GUIDE 02</div>
+    <h2 class="section-title">🔥 Fire Safety</h2>
+
+    <p class="section-description">
+      Fire emergencies can spread quickly and create dangerous
+      conditions. Awareness and proper evacuation procedures
+      are essential in keeping everyone safe.
+    </p>
+
+    <div class="guide-grid">
+
+      <div class="guide-box">
+        <h3>BEFORE A FIRE</h3>
+        <ul>
+          <li>Know the locations of emergency exits.</li>
+          <li>Learn your school's evacuation procedures.</li>
+          <li>Never play with matches, lighters, or electrical equipment.</li>
+          <li>Avoid overloading electrical outlets.</li>
+          <li>Participate in fire drills.</li>
+        </ul>
+      </div>
+
+      <div class="guide-box">
+        <h3>DURING A FIRE</h3>
+        <ul>
+          <li>Alert others and notify a teacher immediately.</li>
+          <li>Activate the fire alarm if instructed or appropriate.</li>
+          <li>Evacuate using the designated exit routes.</li>
+          <li>Use stairs instead of elevators.</li>
+          <li>Stay low if smoke is present.</li>
+          <li>Never return to the building to retrieve belongings.</li>
+        </ul>
+      </div>
+
+      <div class="guide-box">
+        <h3>AFTER A FIRE</h3>
+        <ul>
+          <li>Proceed to the designated assembly area.</li>
+          <li>Wait for teachers to account for students.</li>
+          <li>Follow instructions from firefighters and authorities.</li>
+          <li>Do not re-enter the building until declared safe.</li>
+          <li>Report injuries or missing persons to authorities.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="notice">
+      <strong>REMEMBER:</strong> Leave immediately when instructed.
+      Your safety is more important than your belongings.
+    </div>
+
+  </div>
+</section>
+
+<!-- BOMB THREAT GUIDE -->
+
+<section class="content-section guide-section" id="bomb">
+  <div class="container">
+
+    <div class="section-label">SAFETY GUIDE 03</div>
+    <h2 class="section-title">⚠️ Bomb Threat Safety</h2>
+
+    <p class="section-description">
+      A bomb threat is a warning or claim that an explosive
+      device may be present in a location. Every threat must
+      be treated seriously and reported to the proper authorities.
+    </p>
+
+    <div class="guide-grid">
+
+      <div class="guide-box">
+        <h3>BEFORE A THREAT</h3>
+        <ul>
+          <li>Know your school's emergency procedures.</li>
+          <li>Be familiar with designated assembly areas.</li>
+          <li>Report suspicious messages or threats to school authorities.</li>
+          <li>Understand how emergency announcements are communicated.</li>
+        </ul>
+      </div>
+
+      <div class="guide-box">
+        <h3>DURING A BOMB THREAT</h3>
+        <ul>
+          <li>Remain calm and take every threat seriously.</li>
+          <li>Immediately inform a teacher or school administrator.</li>
+          <li>Do not touch, move, or investigate suspicious objects.</li>
+          <li>Follow evacuation or shelter instructions from authorities.</li>
+          <li>Do not spread unverified information or rumors.</li>
+        </ul>
+      </div>
+
+      <div class="guide-box">
+        <h3>AFTER A BOMB THREAT</h3>
+        <ul>
+          <li>Remain in the designated safe area.</li>
+          <li>Wait for official clearance before returning.</li>
+          <li>Follow instructions from emergency responders.</li>
+          <li>Report any relevant information to authorities.</li>
+          <li>Do not share unverified reports on social media.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="notice">
+      <strong>REMEMBER:</strong> Never investigate a suspicious object
+      yourself. Leave the assessment to trained authorities.
+    </div>
+
+  </div>
+</section>
+
+<!-- SCHOOL SHOOTING GUIDE -->
+
+<section class="content-section guide-section" id="shooting">
+  <div class="container">
+
+    <div class="section-label">SAFETY GUIDE 04</div>
+    <h2 class="section-title">🛡️ School Shooting Safety</h2>
+
+    <p class="section-description">
+      A school shooting is an emergency involving gunfire
+      within or near a school. Although uncommon, knowing
+      basic protective actions and following school protocols
+      are important.
+    </p>
+
+    <div class="guide-grid">
+
+      <div class="guide-box">
+        <h3>BEFORE AN EMERGENCY</h3>
+        <ul>
+          <li>Know your school's emergency response procedures.</li>
+          <li>Pay attention to safety orientations and drills.</li>
+          <li>Know how teachers communicate emergency announcements.</li>
+          <li>Report serious threats or concerning behavior to trusted adults.</li>
+          <li>Know how to contact school authorities.</li>
+        </ul>
+      </div>
+
+      <div class="guide-box">
+        <h3>DURING AN EMERGENCY</h3>
+        <ul>
+          <li>Follow the school's emergency instructions immediately.</li>
+          <li>If a safe route away from danger is available, move away.</li>
+          <li>If leaving is unsafe, follow the school's shelter-in-place procedure.</li>
+          <li>Stay quiet and follow instructions from authorities.</li>
+          <li>Do not approach or investigate the source of danger.</li>
+          <li>Contact emergency services when it is safe to do so.</li>
+        </ul>
+      </div>
+
+      <div class="guide-box">
+        <h3>AFTER AN EMERGENCY</h3>
+        <ul>
+          <li>Wait for official instructions and clearance.</li>
+          <li>Follow directions from emergency responders.</li>
+          <li>Stay with your teacher or designated group when safe.</li>
+          <li>Report injuries or missing persons to authorities.</li>
+          <li>Seek support from trusted adults if feeling distressed.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="notice">
+      <strong>REMEMBER:</strong> Your safety comes first.
+      Follow official school emergency procedures and
+      instructions from trained responders.
+    </div>
+
+  </div>
+</section>
+
+<!-- SAFETY GALLERY -->
+
+<section class="content-section gallery-section" id="gallery">
+  <div class="container">
+
+    <div class="section-label">VISUAL LEARNING CENTER</div>
+
+    <h2 class="section-title">Safety Gallery</h2>
+
+    <p class="section-description">
+      Explore important safety reminders and emergency
+      preparedness visuals. These images reinforce the
+      importance of awareness, prevention, and readiness
+      within our school community.
+    </p>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-card">
+        <img
+          src="https://image.slidesharecdn.com/eqsafetyinschool-160426124406/75/Earthquake-safety-in-schools-Philippines-1-2048.jpg"
+          alt="Earthquake safety in schools"
+          loading="lazy">
+
+        <div class="gallery-info">
+          <h3>Earthquake Preparedness</h3>
+          <p>
+            Learn the importance of earthquake drills
+            and proper evacuation.
+          </p>
+          <a class="gallery-source"
+             href="https://www.slideshare.net/slideshow/earthquake-safety-in-schools-philippines/61369037"
+             target="_blank" rel="noopener">
+            VIEW IMAGE SOURCE →
+          </a>
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img
+          src="https://www.csusb.edu/sites/default/files/upload/image/2020/Emerg%20Poster.JPG"
+          alt="Campus emergency procedures poster"
+          loading="lazy">
+
+        <div class="gallery-info">
+          <h3>Emergency Procedures</h3>
+          <p>
+            Understand the importance of following
+            official emergency procedures.
+          </p>
+          <a class="gallery-source"
+             href="https://www.csusb.edu/ehs/campus-emergencies"
+             target="_blank" rel="noopener">
+            VIEW IMAGE SOURCE →
+          </a>
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img
+          src="https://cdnsm5-ss18.sharpschool.com/UserFiles/Servers/Server_117089/Image/Departments/Student_Support_Services/Safety/8x11%20Emergency%20Situations%20at%20School%20Handout.png"
+          alt="Emergency situations at school"
+          loading="lazy">
+
+        <div class="gallery-info">
+          <h3>School Emergency Awareness</h3>
+          <p>
+            Become familiar with different emergency
+            situations and school protocols.
+          </p>
+          <a class="gallery-source"
+             href="https://www.djusd.net/departments/student_support_services/safety"
+             target="_blank" rel="noopener">
+            VIEW IMAGE SOURCE →
+          </a>
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img
+          src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80"
+          alt="Safety and protective equipment"
+          loading="lazy">
+
+        <div class="gallery-info">
+          <h3>Safety Awareness</h3>
+          <p>
+            Remember that preparation and awareness
+            are important parts of school safety.
+          </p>
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img
+          src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=900&q=80"
+          alt="Safety and emergency preparedness"
+          loading="lazy">
+
+        <div class="gallery-info">
+          <h3>Preparedness Matters</h3>
+          <p>
+            Learn, participate, and stay informed
+            about your school's safety procedures.
+          </p>
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img
+          src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=80"
+          alt="School learning environment"
+          loading="lazy">
+
+        <div class="gallery-info">
+          <h3>A Safer School Community</h3>
+          <p>
+            Everyone has a role in promoting a safe
+            and responsible learning environment.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="notice">
+      <strong>STAY INFORMED:</strong>
+      Visual reminders can help reinforce what we learn
+      during safety orientations and emergency drills.
+    </div>
+
+   
+  </div>
+</section>
+
+<!-- LOCAL EMERGENCY HOTLINES -->
+
+<section class="content-section emergency" id="helpline">
+  <div class="container">
+
+    <div class="section-label" style="color:#93C5FD;">
+      FASTER CONNECTION | FASTER RESPONSE
+    </div>
+
+    <h2 class="section-title" style="font-size:45px;">
+      EMERGENCY HOTLINES
+    </h2>
+
+    <p class="section-description">
+      In an emergency, contacting the appropriate authorities
+      can help ensure a faster response. Keep important
+      emergency contact information accessible.
+    </p>
+
+    <div class="emergency-box">
+
+      <h3>PHILIPPINES EMERGENCY HOTLINE</h3>
+
+      <div class="emergency-number">911</div>
+
+      <p>
+        For urgent police, fire, and medical emergencies.
+      </p>
+
+      <hr>
+
+      <h3>LOCAL EMERGENCY HOTLINE NUMBERS</h3>
+
+      <div class="hotline-list">
+
+        <div class="hotline-item">
+          <strong>Provincial Capitol</strong>
+          <a href="tel:07721211">772-1211</a> /
+          <a href="tel:09171099911">0917-109-9911</a>
+        </div>
+
+        <div class="hotline-item">
+          <strong>Laoag City Hall</strong>
+          <a href="tel:07720001">772-0001</a> /
+          <a href="tel:09338191227">0933-819-1227</a>
+        </div>
+
+        <div class="hotline-item">
+          <strong>Department of Public Safety (DPS)</strong>
+          <a href="tel:07720564">772-0564</a> /
+          <a href="tel:09567013100">0956-701-3100</a>
+        </div>
+
+        <div class="hotline-item">
+          <strong>Bureau of Fire Protection</strong>
+          <a href="tel:07721885">772-1885</a> /
+          <a href="tel:09159343387">0915-934-3387</a>
+        </div>
+
+        <div class="hotline-item">
+          <strong>Laoag City Police Station</strong>
+          <a href="tel:07720201">772-0201</a> /
+          <a href="tel:09175997414">0917-599-7414</a>
+        </div>
+
+        <div class="hotline-item">
+          <strong>Gov. R.B. Ablan Memorial Hospital</strong>
+          <a href="tel:07720303">772-0303</a> /
+          <a href="tel:6002360">600-2360</a>
+        </div>
+
+        <div class="hotline-item">
+          <strong>MMMH Batac</strong>
+          <a href="tel:07923133">792-3133</a> /
+          <a href="tel:6171343">617-1343</a>
+        </div>
+
+        <div class="hotline-item">
+          <strong>Philippine Red Cross</strong>
+          <a href="tel:07720591">772-0591</a> /
+          <a href="tel:07720217">772-0217</a>
+        </div>
+
+        <div class="hotline-item">
+          <strong>Ilocos Norte Electric Cooperative</strong>
+          <a href="tel:6004632">600-4632</a> /
+          <a href="tel:09209594632">0920-959-4632</a>
+        </div>
+
+        <div class="hotline-item">
+          <strong>Ilocos Norte Water District</strong>
+          <a href="tel:07720985">772-0985</a> /
+          <a href="tel:09999977656">0999-997-7656</a>
+        </div>
+
+        <div class="hotline-item">
+          <strong>City Social Welfare and Development Office</strong>
+          <a href="tel:07720005">772-0005</a> /
+          <a href="tel:09989505017">0998-950-5017</a>
+        </div>
+
+      </div>
+
+      <hr>
+
+      <!-- INNHS EVACUATION INFORMATION -->
+
+      <div class="evacuation-box">
+
+        <h3>INNHS MAIN CAMPUS</h3>
+
+        <p>
+          <strong>Designated Evacuation Area:</strong><br>
+          Centennial Park
+        </p>
+
+        <p>
+          <strong>Fire Escape Route:</strong><br>
+          Follow the designated fire escape route
+          posted around the INNHS Main Campus.
+        </p>
+
+        <p>
+          <strong>Main Gate:</strong><br>
+          Follow school-authorized evacuation instructions
+          when exiting the campus.
+        </p>
+
+      </div>
+
+      <div class="notice"
+           style="text-align:left;color:#102B49;margin-top:25px;">
+
+        <strong>IMPORTANT REMINDER:</strong>
+        Always follow instructions from school authorities
+        and emergency responders. Keep emergency contact
+        information accessible and report emergencies immediately.
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <h3>INNHSafe.</h3>
+
+  <p>
+    Promoting awareness, preparedness, and safety
+    within the school community.
+  </p>
+
+  <p>
+    © 2026 INNHSafe | School Safety and Awareness
+  </p>
+
+  <p>
+    An educational initiative for the INNHS community.
+  </p>
+</footer>
+
+<!-- JAVASCRIPT -->
+
+<script>
+function toggleMenu() {
+  document.getElementById("navLinks").classList.toggle("active");
+}
+
+function closeMenu() {
+  document.getElementById("navLinks").classList.remove("active");
+}
+</script>
+
+</body>
+</html>
